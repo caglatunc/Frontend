@@ -7,11 +7,11 @@
         /* Selector */
         h1 {
             color:rgba(70, 183, 117,1);
-            color: red;
-            color:#6db39d;
+            color: rgb(63, 1, 1);
+            color:#0e5740;
             opacity: 0.5;
             color: #f8f3f3;
-            background-color: rgb(51, 63, 28);
+            background-color: rgb(21, 22, 20);
             font-family:serif, sans-serif, monospace; 
             font-size: 20px;
             font-weight: 000;
@@ -29,21 +29,22 @@
             display: flex;
             justify-content: space-between;
             background-color: #ccc;
-            /* padding-left: 10px;
+            /* padding-left: 10px; iç boşluklar padding ile basılır.
             padding-right: 10px;
             padding-top: 5px;
-            padding-bottom: 5px; */
+            padding-bottom: 5px;
+            margin-left:10px; dış çerçeveyi sola doğru basar. */
             padding: 5px 10px 5px 10px;
-            position: fixed;
+            position: fixed; /*absolute da kullanılabilir. */
             width: 94%;
         }
 
         ul{
-           list-style-type: none;
+           list-style-type: none;    
            display: flex; 
-           gap:15px;
-           justify-content: center;
-           align-items: center;
+           gap:15px;/* araya boşluk atar  */
+           justify-content: center; /* soldan sağa ortalamasını yapar  */
+           align-items: center; /* yukarıdan aşağıya ortalamasını yapar  */
         }
 
         a{
@@ -60,7 +61,7 @@
             color:  pink;           
         }
 
-        a{
+      a{    /* alt çizgileri yok etmek için*/
             text-decoration: none;
             color: blue;
         }    
