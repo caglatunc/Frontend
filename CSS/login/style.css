@@ -22,13 +22,27 @@ body {
     border: 1px solid;
     border-radius: 8px;
     box-shadow: 8px 4px 15px 1px rgba(255, 228, 192, 0.945);
+    background-color: transparent;
+    backdrop-filter: blur(50px);
 
+}
+
+label{
+    color: #ccc;
+}
+
+a{
+    color: #ccc;
+    text-decoration: none;
+}
+h1{
+    color: rgb(199, 194, 185);
 }
 
 /* 3 */
 .head {
     text-align: center;
-    background-color: rgba(38, 0, 255, 0.671);
+    /* background-color: rgba(49, 31, 211, 0.822); */
     padding: 15px;
     border-radius: 8px;
 }
@@ -61,7 +75,7 @@ button {
     width: 100%;
     padding: 7px;
     border-radius: 8px;
-    background-color: rgba(153, 165, 42, 0.11);
+    background-color: rgba(128, 128, 128, 0.219);
     border-color: none;
     cursor:pointer;
 }
