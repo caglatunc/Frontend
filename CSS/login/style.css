@@ -19,7 +19,8 @@ body {
 
 /* 2 */
 .container {
-    border: 1px solid;
+    padding: 30px;
+    border: 1px solid #5c5c5f;
     border-radius: 8px;
     box-shadow: 8px 4px 15px 1px rgba(255, 228, 192, 0.945);
     background-color: transparent;
@@ -27,13 +28,15 @@ body {
 
 }
 
+
 label{
     color: #ccc;
 }
 
 a{
     color: #ccc;
-    text-decoration: none;
+    text-decoration: none; 
+    font-size: 14px;
 }
 h1{
     color: rgb(199, 194, 185);
@@ -71,6 +74,10 @@ input[type="checkbox"] {
     margin-top: 8px;
 }
 
+.mt-2{
+    margin-top: 16px;
+}
+
 button {
     width: 100%;
     padding: 7px;
@@ -78,9 +85,10 @@ button {
     background-color: rgba(128, 128, 128, 0.219);
     border-color: none;
     cursor:pointer;
+    color: #ccc;
 }
 button:hover{
-    background-color: rgba(254, 255, 240, 0.747);
+    background-color: rgba(254, 255, 240, 0.192);
 }
 .checkbox {
     display: flex;
@@ -90,5 +98,6 @@ button:hover{
 
 .signup a{
     float: right;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+
