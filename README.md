@@ -1,3 +1,6 @@
 # Frontend
 LoginPage
-![image](https://github.com/caglatunc/Frontend/assets/95507765/f680d469-ee47-432f-9490-bce86ff7420e)
+![image](https://github.com/caglatunc/Frontend/assets/95507765/15bd815d-5d1b-4e1d-ba23-143a762c35ab)
+
+
+
