@@ -78,7 +78,7 @@ input[type="checkbox"] {
     margin-top: 16px;
 }
 
-button {
+.btn {
     width: 100%;
     padding: 7px;
     border-radius: 8px;
@@ -87,7 +87,7 @@ button {
     cursor:pointer;
     color: #ccc;
 }
-button:hover{
+.btn:hover{
     background-color: rgba(254, 255, 240, 0.192);
 }
 .checkbox {

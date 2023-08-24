@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;  /*navbardaki elementleri yan yanan dizer */
+    justify-content: space-between; /*Sağa ve sola ayırır */
+    padding: 10px; 
+    background-color: bisque;
+    align-items: center;  /*Yukarıdan aşağıya ortalar */
+}
+nav ul { /*Nav'ın içinde bulunan ul elementine ulaşıyoruz */
+list-style: none; /*. işaretini kaldırır */
+}
+
+nav ul li{ /*Listedeki elementleri nav da ortalamak için */
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px; /*Resim ve logout arasına boşluk vermek için */
+}
+
+nav ul li a{
+    text-decoration: none; /*altçizgiyi kaldırır */
+    color: rgb(1, 44, 1);
+}
+.profile-img{
+    width: 50px;
+    border-radius: 50px;
+
+
+}

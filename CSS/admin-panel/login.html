@@ -4,7 +4,7 @@
 <head>
 
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth-style.css">
 </head>
 
 <body>
@@ -27,15 +27,21 @@
                 <label for="rememberMe">Remember Me</label>
             </div>
             <div class="mt">
-                <button>Sign In</button>
+             <button onclick="signIn()" class="btn">Sing In</button>
             </div>
             <div class="mt-2 signup">
-             <a href="#">Not a member? Sign up now</a>
+             <a href="./register.html">Not a member? Sign up now</a>
              <!-- <p>Not a member? <span id="Sign up now">Sign up now</span></p> -->
 
             </div>
-            
         </div>
+    </div>
+
+    <script>
+        function signIn(){
+            window.location.href ="./index.html"
+        }
+    </script>
 </body>
 
 </html>
