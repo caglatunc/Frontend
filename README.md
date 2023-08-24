@@ -5,5 +5,7 @@ LoginPage
 RegisterPage
 ![image](https://github.com/caglatunc/Frontend/assets/95507765/1a26f001-e0a9-4851-99e5-229fbbe3a2af)
 
+AdminPage
+![image](https://github.com/caglatunc/Frontend/assets/95507765/0f91bf01-4c75-48a7-9026-ad22d005707d)
 
 
