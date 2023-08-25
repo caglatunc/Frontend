@@ -6,7 +6,7 @@
 nav{
     display: flex;  /*navbardaki elementleri yan yanan dizer */
     justify-content: space-between; /*Sağa ve sola ayırır */
-    padding: 10px; 
+    padding: 20px; 
     background-color: rgb(149, 179, 187);
     align-items: center;  /*Yukarıdan aşağıya ortalar */
 }
@@ -26,6 +26,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 gap: 10px; /*Resim ve logout arasına boşluk vermek için */
+
 }
 
 nav ul li a{
@@ -98,4 +99,27 @@ border-radius: 30px;
     border-radius: 30px;
     padding: 15px;
     margin-bottom: 10px;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    /* display: none; */
+    height: 0px;
+    position: absolute;
+    top: 70px;
+    background-color:  rgb(149, 179, 187);
+    transition: height 1s;
+
+}
+.dropdown-content a{
+    color:transparent;
+    transition: color 1s;
+}
+.dropdown:hover .dropdown-content{
+    /* display: block; */
+    height: 80%;
+}
+.dropdown:hover .dropdown-content a{
+    color: white;
 }
