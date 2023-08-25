@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Ayarları Cihazlara göre ölçeklendirme yapıyor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .row:after{
+            content: ' ';
+            display: table;
+            clear: both;
+        }
+
+        .col{
+            float: left;   /* columnlar alt alt görünmekteydi. yan yana dizdi  */
+            border: 1px solid white;
+            width: 24%;
+            background-color: red;
+            height: 150px;
+        }
+
+        h1:after{
+            content: 'Cagla';
+        }
+
+        /* Telefon ve tablette farklı davransın. Screen ekranlarda değişiklik yapacağımızı ifade eder */
+        /* Ekran 900px ve altındaysa .col{} width değişiklik yap.  */
+        /* Tablet için; */
+        @media screen and (max-width:900px){
+          .col{
+            width:50%;
+          }  
+        }
+        /* Telefon için */
+        @media screen and (max-width: 400px){
+            .col{
+                width: 100%
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Merhaba </h1>
+    <div class="row">
+       
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, laudantium aperiam assumenda sed fugiat repudiandae quam maiores voluptatum ex quidem voluptatibus optio veniam quis blanditiis impedit illo eveniet in quos.</p>
+    </div>
+</body>
+</html>

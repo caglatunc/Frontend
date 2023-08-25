@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 nav{
+
     display: flex;  /*navbardaki elementleri yan yanan dizer */
     justify-content: space-between; /*Sağa ve sola ayırır */
     padding: 20px; 
@@ -122,4 +123,23 @@ border-radius: 30px;
 }
 .dropdown:hover .dropdown-content a{
     color: white;
+}
+
+@media screen and (max-width:1080px) {
+    nav label:after{
+        content: '\2630';
+        font-size: 50px;
+    }
+    .sidebar{
+        display: none;
+    }
+    .content{
+        width: 100%;
+    }
+    .head{
+        display: none;
+    }
+    nav ul{
+        display: none;
+    }
 }
