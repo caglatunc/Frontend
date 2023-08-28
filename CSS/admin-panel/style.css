@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+
+    display: flex;  /*navbardaki elementleri yan yanan dizer */
+    justify-content: space-between; /*Sağa ve sola ayırır */
+    padding: 20px; 
+    background-color: rgb(149, 179, 187);
+    align-items: center;  /*Yukarıdan aşağıya ortalar */
+}
+.div-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+nav ul { /*Nav'ın içinde bulunan ul elementine ulaşıyoruz */
+list-style: none; /*. işaretini kaldırır */
+}
+
+nav ul li{ /*Listedeki elementleri nav da ortalamak için */
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px; /*Resim ve logout arasına boşluk vermek için */
+
+}
+
+nav ul li a{
+    text-decoration: none; /*altçizgiyi kaldırır */
+    color: rgb(10, 2, 80);
+}
+.logo{
+    width: 100px;
+    
+}
+.profile-img, .logo{
+    width: 50px;
+    border-radius: 50px;
+}
+.sidebar{
+    width: 12%;
+    float: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 90vh;
+}
+.sidebar-header{
+text-align: center;
+padding-bottom: 15px;
+margin-bottom: 20px;
+border-bottom: 1px solid #ccc;
+border-radius: 30px;
+
+}
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar ul li{
+    padding: 10px; 
+    border-bottom: 1px solid #ccc; /*altçizgi verir */
+    cursor: pointer;
+    
+}
+
+.sidebar ul li:hover{
+    background-color: bisque;
+}
+
+.sidebar ul li a{
+  text-decoration: none;
+  color: rgb(10, 2, 80);
+}
+.content{
+    width: 88%;
+    float: right; /*İçeriğin konumlandırılması için */
+    padding: 10px;
+}
+.content-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-radius: 30px;
+    margin-bottom: 10px; /*Başlık ile body arasına boşluk vermek için */
+}
+
+ .content-header a{
+    color: rgb(10, 2, 80);
+ }
+
+.content-body{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    /* display: none; */
+    height: 0px;
+    position: absolute;
+    top: 70px;
+    background-color:  rgb(149, 179, 187);
+    transition: height 1s;
+
+}
+.dropdown-content a{
+    color:transparent;
+    transition: color 1s;
+}
+.dropdown:hover .dropdown-content{
+    /* display: block; */
+    height: 80%;
+}
+.dropdown:hover .dropdown-content a{
+    color: white;
+}
+
+@media screen and (max-width:1080px) {
+    nav label:after{
+        content: '\2630';
+        font-size: 50px;
+    }
+    .sidebar{
+        display: none;
+    }
+    .content{
+        width: 100%;
+    }
+    .head{
+        display: none;
+    }
+    nav ul{
+        display: none;
+    }
+}

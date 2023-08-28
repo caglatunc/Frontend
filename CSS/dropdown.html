@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dropdown</title>
+    <style>
+        .dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            /* display: none; */
+            position: absolute;
+            height: 0px; 
+            padding: 0px 16px; /* İlk padding yukarı ve aşağı, ikinci  padding sağ ve sola gider otomatik olarak*/
+            background-color: aquamarine;
+            color: white;
+            transition: height 1s;
+        }
+
+        .dropdown:hover .dropdown-content{
+            /* display: block; */
+            height: 500% ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <span>Mouse over me</span>
+        <div class="dropdown-content">
+            <p>Hello World</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    nav{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        height: 80px;
+        align-items: center;
+        background-color: bisque;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 15px;
+    }
+    ul li a{
+        display: inline-block;
+        width: 100%;
+    }
+
+    ul li a:hover{
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 174, 127);
+        color: aliceblue;
+        }
+    
+    ul li a{
+        text-decoration: none;
+        color: black;
+    }
+
+    #hamburger{
+        display: none;
+    }
+
+  @media screen and (max-width:500px){
+    
+    nav label:after{ /*Hamburger çizgilerini yaptırdık */
+        content: '\2630';
+    }
+    label{
+        font-size: 30px;
+    }
+
+    #hamburger:checked + ul{ /* +:hamburger check olduktan sonraki ilk element ul */
+        display: block;
+    }
+
+    ul{
+        position: absolute;/* nav'ıda relative yaptık ust uste geldi*/
+       /* visibility: hidden;  ul deki listeleri gizledi */
+        display: none;
+        top: 70px; /* Yukarıdan 70px boşluk bıraktık aşağıya aldık*/
+        left: 0px; /* Sola kayıdırdık*/
+        background-color:  bisque;
+        height: 150px; 
+        width: 100%; /* Kısa kısa duruyordu uzattık*/
+        text-align: center; /* Ortaladık */
+    }
+    ul li a{
+        width: 100%;
+    }
+
+  
+    
+</style>
+
+
+
+</head>
+
+<body>
+    <nav>
+        <h1>Logo</h1>
+
+        <label for="hamburger"></label>
+        <input type="checkbox" id="hamburger">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
