@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>JS Form</title>
+</head>
+
+<body>
+    <form onsubmit="save(event)">
+        <input required minlength="3">
+        <button type="submit">Show me input value
+        </button>
+    </form>
+    <hr>
+    <ul id="list">
+        
+    </ul>
+
+    <script>
+        function save (event){
+            event.preventDefault();
+            
+            const inputElement = document.querySelector("input");
+            //Elemente erişmek için;
+            const ulElement = document.getElementById("list");
+            // Elementi işliyorum.
+            ulElement.innerHTML = "<li>" + inputElement.value + "</li>"
+
+            inputElement.value =""; //input elementinin içini boşalt
+            inputElement.focus();
+        }
+
+
+        function writeInputValueToConsole(event) {
+            event.preventDefault(); // Form elementine özgü. Form elementinin tetikleme esnasında sayfayı yenilemesine engel olur.
+            console.log(event)
+            // const element = document.querySelector("input")
+            // console.log(element.value)
+        }
+    </script>
+</body>
+
+</html>
