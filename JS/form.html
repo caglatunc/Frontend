@@ -18,14 +18,58 @@
     </ul>
 
     <script>
+
+        const liste = [];  //Liste ve içine element eklenebilir.
+        let number =0;
+
+        function deleteElement(id){
+            document.getElementById(id).remove();
+        }
+
+        function changeElementColor(id){
+            const element = document.getElementById(id);
+            const elementColor=element.style.color
+            if(element .style.color === "red"){
+                elementColor = "black"
+            }else{
+                elementColor= "red";
+            }
+            
+        }
         function save (event){
             event.preventDefault();
-            
+
+            //Listeyi Element oluşturarak veiyoruz.
             const inputElement = document.querySelector("input");
+
+           // liste.push(inputElement.value);
+
+            const ulElement = document.getElementById("list"); 
+           
+           // const liElement = document.createElement("li");
+           // liElement.innerText = inputElement.value
+
+           // ulElement.append(liElement);
+            
+
+            //Listeyi değeri string vererek oluşturuyoruz.
             //Elemente erişmek için;
-            const ulElement = document.getElementById("list");
+            //const ulElement = document.getElementById("list"); 
             // Elementi işliyorum.
-            ulElement.innerHTML = "<li>" + inputElement.value + "</li>"
+           // ulElement.innerHTML = "<li>" + inputElement.value + "</li>" // inner html = ile değer verirsek eski değeri sıfırlar yeni değeri girer. 
+           ulElement.innerHTML += `
+        <li id='li${number}'>
+            ${inputElement.value}  
+            <button onclick='changeElementColor("li${number}
+            ")'>
+                Rengi değiştir
+            </button>
+            <button onclick='deleteElement("li${number}")'>Sil</button>
+     </li>                  
+     
+     // += keywordü ile alt alta sıralamasını sağlayabiliyorum.her li elementine özel bir id verdik. Ters tıknak tek string yazabilmemizi sağlar.
+           `  
+           number++;
 
             inputElement.value =""; //input elementinin içini boşalt
             inputElement.focus();
