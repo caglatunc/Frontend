@@ -30,9 +30,9 @@
             const element = document.getElementById(id);
             //const elementColor=element.style.color; Bunu referans bağlantısı yapmadığımız için kullanmayız.
             if (element.style.color === "red") {
-                elementColor = "black"
+                element.style.color = "black"
             } else {
-                elementColor = "red";
+                element.style.color = "red";
             }
         }
         function save(event) {
@@ -50,23 +50,23 @@
 
             // ulElement.append(liElement);
 
-
             //Listeyi değeri string vererek oluşturuyoruz.
             //Elemente erişmek için;
             //const ulElement = document.getElementById("list"); 
             // Elementi işliyorum.
             // ulElement.innerHTML = "<li>" + inputElement.value + "</li>" // inner html = ile değer verirsek eski değeri sıfırlar yeni değeri girer. 
+
             ulElement.innerHTML += `
-        <li id='li${number}'>
+         <li id='li${number}'>
             ${inputElement.value}  
             <button onclick='changeElementColor("li${number}
             ")'>
                 Rengi değiştir
             </button>
             <button onclick='deleteElement("li${number}")'>Sil</button>
-     </li>                  
+         </li>                  
      
-     // += keywordü ile alt alta sıralamasını sağlayabiliyorum.her li elementine özel bir id verdik. Ters tıknak tek string yazabilmemizi sağlar.
+         // += keywordü ile alt alta sıralamasını sağlayabiliyorum.her li elementine özel bir id verdik. Ters tıknak tek string yazabilmemizi sağlar.
            `
             number++;
 
@@ -77,9 +77,9 @@
 
         function writeInputValueToConsole(event) {
             event.preventDefault(); // Form elementine özgü. Form elementinin tetikleme esnasında sayfayı yenilemesine engel olur.
-            console.log(event)
-            // const element = document.querySelector("input")
-            // console.log(element.value)
+            //console.log(event)
+            const element = document.querySelector("input")
+            console.log(element.value)
         }
     </script>
 </body>
