@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Brick Game</title>
+    <style>
+        *{
+            margin: 0;  /*dış kenar boşluğu sıfırlanır ve sayfanın kenarları tarayıcıdan bağımsız olarak aynı yerde başlar..*/
+            padding:0;  /*iç kenar boşlukları sıfırlanır ve öğelerin içeriği tarayıcıdan bağımsız olarak daha tutarlı bir şekilde yerleştirilir. */
+            box-sizing: border-box; 
+        } 
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 420px;
+        }
+        canvas{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <!-- elemente rahat ulaşmak için game id verilir. -->
+    <canvas id="game" width="480" height="320"></canvas>
+    <script src="./script.js"></script>
+</body>
+</html>
