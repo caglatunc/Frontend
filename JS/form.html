@@ -28,13 +28,12 @@
 
         function changeElementColor(id){
             const element = document.getElementById(id);
-            const elementColor=element.style.color
-            if(element .style.color === "red"){
+            //const elementColor=element.style.color; Bunu referans bağlantısı yapmadığımız için kullanmayız.
+            if(element.style.color === "red"){
                 elementColor = "black"
             }else{
                 elementColor= "red";
             }
-            
         }
         function save (event){
             event.preventDefault();
