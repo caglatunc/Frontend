@@ -1,59 +1,62 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-document.addEventListener("keydown",tusHareketleri);
+document.addEventListener("keydown", tusHareketleri)
 
 let canvasHeight = canvas.clientHeight;
 let canvasWidth = canvas.clientWidth;
-let x = 10;
+let x = 10; //Hesaplamada daha rahat işlem yapabilmek için
 let y = 10;
 let hareketX = 0;
 let hareketY = 0;
-let elmaX = 5;
+
+let elmaX = 5; // ctx.fillRect(100,100,18,18) 100 yazmak yerine 5*20 yazmak için
 let elmaY = 5;
 let konum = 20;
-let boyut = 18;
+let boyut = 18; //yılanın boyutu genişlik & yükseklik
 
 
 function oyunuCiz(){
-    ekraniTemizle();
-    yilaniCiz();
-    elmayiCiz();
+   ekraniTemizle();
+   yilaniCiz();
+   elmayiCiz();
 
-    let sonucX = x+ hareketX;
-    let sonucY = y+ hareketY;
+   let sonucX = x + hareketX;
+   let sonucY = y + hareketY;
 
-    if(sonucY < 0){
-        sonucY = 19
-    }else if(sonucY > 20){
-        sonucY = 0
-    }
-
-    if(sonucX < 0){
+   if(sonucY < 0){  
+        sonucY = 19;
+   }else if (sonucY >19){
+    sonucY = 0;
+   }
+ 
+   if(sonucX <0){
         sonucX = 19
-    }else if(sonucX > 19){
+   }else if(sonucX > 19){
         sonucX = 0;
-    }
+   }
 
-    x = sonucX;
-    y = sonucY;
+   x = sonucX;
+   y = sonucY;
 
-    setTimeout(oyunuCiz,100);
+
+
+   setTimeout(oyunuCiz,100);
 }
 
-function ekraniTemizle(){
+function ekraniTemizle(){ // Sayfayı ilk açtığında ekran temizlensin
     ctx.fillStyle = "black";
-    ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight);
+    ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight);//Bu rengin elementte nereye gitmesini belirlersin
 }
 
 function yilaniCiz(){
     ctx.fillStyle = "white";
-    ctx.fillRect(x * konum,y * konum,boyut,boyut)
+    ctx.fillRect(x*konum,y*konum,boyut,boyut);
 }
 
 function elmayiCiz(){
     ctx.fillStyle = "red";
-    ctx.fillRect(elmaX * konum, elmaY * konum,boyut,boyut);
+    ctx.fillRect(elmaX*konum,elmaY*konum,boyut,boyut);
 }
 
 function tusHareketleri(e){
