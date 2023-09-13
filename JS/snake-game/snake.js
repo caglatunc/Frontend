@@ -18,6 +18,9 @@ let yilanUzunlugu = 3; // Toplam kaç parçadan oluşucağını söyleceğim.
 let yilanParcalari = []; //Parçalarımın hangi x ve y konumunda olduğunu burada tutacağım
 let skor = 0;
 let hiz = 10;
+let can = 3;
+let zorlukSeviyesi = "orta"; // Kolay, orta ve zor seviyeleri için varsayılan zorluk seviyesi
+
 class YilanParcasi{
     constructor(x,y){
         this.x = x;
@@ -34,8 +37,12 @@ function oyunuCiz(){
    yilanHareketiniGuncelle();
    elmaninKonumunuGuncelle();
    skoruCiz();
+   hiziCiz();
+   canCiz();
+   const sonuc = oyunBittiMi();
 
-
+   if(sonuc)
+        return;
 
    setTimeout(oyunuCiz,1000/hiz);
 }
@@ -71,18 +78,22 @@ function tusHareketleri(e){
 
      switch (e.keyCode){
         case 37: //sol
+        if(hareketX === 1) return;//Soldayken sağa çevirme
             hareketX = -1; // -1 mevcut değeri azaltıyor
             hareketY = 0;
             break;
         case 38: //yukarı
+        if(hareketY === 1) return;
             hareketY = -1;
             hareketX = 0;
             break;
         case 39: //sağa
+        if(hareketX === -1) return;
             hareketX = 1;
             hareketY = 0;
             break;  
         case 40: // aşağı
+        if(hareketY === -1) return;
             hareketY = 1;
             hareketX = 0;
             break;
@@ -141,7 +152,7 @@ function elmaninKonumunuGuncelle(){
         }
     
       yilanUzunlugu++;
-      skor +=5;
+      skor +=10;
 
         if(yilanUzunlugu % 3 === 0){
             hiz+=3;
@@ -156,4 +167,73 @@ function skoruCiz(){
     ctx.fillText(`Skor: ${skor} `,canvasWidth-90,30)  //Ekrana yazı yazmamızı sağlıyor.
 }
 
+function hiziCiz(){
+
+    ctx.fillStyle ="white"
+    ctx.fillFont = "20px verdena";
+    ctx.fillText(`Hız:${hiz}`, canvasWidth-160,30);
+
+}
+
+function oyunBittiMi(){
+    let oyunBitti = false;
+    if(hareketX === 0 && hareketY === 0) return;
+
+    for(let index in yilanParcalari){
+        let parca = yilanParcalari[index]
+        if(parca.x === x && parca.y === y){
+            can--;
+            if(can < 0){
+                can = 0;
+                oyunBitti = true
+               
+            }
+            yilanParcalari.splice(0,index);
+            yilanUzunlugu = yilanParcalari.length;
+            skor = yilanUzunlugu*10;
+            break;
+        }
+    }
+
+    if(oyunBitti){
+        ctx.fillStyle="white";
+        ctx.font = "50 px verdena";
+         ctx.fillText(`Game Over!`, canvasWidth/4.5, canvasHeight/2);
+    }
+
+    return oyunBitti;
+}
+function canCiz() {
+    ctx.fillStyle = "white";
+    ctx.font = "25px verdena";
+    ctx.fillText(`Can: ${can}`, canvasWidth - 240, 30)
+}
+
+
+function yeniOyun(){
+    document.location.reload();//Sayfayı yeniler.
+}
+
+function zorlukSeviyesineGoreHizAyarla(zorluk){
+    switch (zorluk){
+        case "kolay": 
+            return 3; // Kolay seviye için daha yavaş hız
+        case "orta":
+            return 10; // Orta seviye için orta hız
+        case "zor":
+            return 30; // Zor seviye için daha hızlı hız
+        default:
+            return 10; // Varsayılan olarak orta seviyeyi kullan
+    }
+}
+
+function zorlukSeviyesiniAyarla(zorluk){ //hangi zorluk seviyesinin seçildiğini belirlemek için kullanılır.
+    zorlukSeviyesi =zorluk;
+    hiz = zorlukSeviyesineGoreHizAyarla(zorluk);
+}
+
+function startGame(){
+    document.getElementById("start-screen").style.display ="none";
+
+}
 oyunuCiz();

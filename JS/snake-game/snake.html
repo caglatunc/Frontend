@@ -1,66 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <style>
-        *{
+        * {
             padding: 0;
-            margin: 0; 
-                }
+            margin: 0;
+        }
 
-    body{
-         display: flex; /*Elementleri özelleştirmemizi sağlıyor. Yan yana, alt altta vs */
-        flex-direction: column; /* yan yana duran her elementi column tarzında dizer */
-        justify-content: center;
-        align-items: center; /*Elementin yüksekliği neyse onun yüksekliğine göre yukarıdan aşağıya ortalar bu yüzden yükseklik verdik */
-        height: 100vh; 
-    }
+        body {
+            display: flex;
+            /*Elementleri özelleştirmemizi sağlıyor. Yan yana, alt altta vs */
+            flex-direction: column;
+            /* yan yana duran her elementi column tarzında dizer */
+            justify-content: center;
+            align-items: center;
+            /*Elementin yüksekliği neyse onun yüksekliğine göre yukarıdan aşağıya ortalar bu yüzden yükseklik verdik */
+            height: 100vh;
+            background-color: rgb(156, 163, 165);
+        }
 
-    canvas{
-        
-        box-shadow: 20px 10px 50px black;
-    }
+        canvas {
 
-    button:hover{
-        background-color: rgb(5,122,87);
-    }
+            box-shadow: 20px 10px 50px rgb(0, 0, 0);
+        }
 
-    button{
-        width: 30%;
-        padding: 10px;
-        background-color: green;
-        color: white;
-        margin-bottom: 10px;
-        box-shadow: 5px 5px 5px black;
-        cursor: pointer;
-    }
+        button:hover {
+            background-color: rgb(137, 150, 146);
+        }
 
-    @media screen and (max-width:900px) {
-        /* canvas{
+        button {
+            width: 30%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            margin-bottom: 10px;
+            box-shadow: 5px 5px 5px black;
+            cursor: pointer;
+        }
+      
+
+        @media screen and (max-width:900px) {
+
+            /* canvas{
             width: 80%;
             height: 80%;
         } */
-        button{
-            width: 60%;
+            button {
+                width: 60%;
+            }
         }
-    }
-    @media screen and (max-width:450px) {
-        /* canvas{
+
+        @media screen and (max-width:450px) {
+
+            /* canvas{
             width: 100%;
             height: 90%;
         } */
-        button{
-            width: 80%;
+            button {
+                width: 80%;
+            }
         }
-    }
-      </style>
+    </style>
 </head>
+
 <body>
-    <button>New Game</button>
-    <canvas width ="400" height = "400" id="game"></canvas>
+    <button onclick="yeniOyun()">Yeni Oyun</button>
+    <canvas width="400" height="400" id="game"></canvas>
+
+
+    <!-- <button>New Game</button>
+
+    <div id="game-container" style="display: none;">
+        <canvas width="400" height="400" id="game"></canvas>
+    </div>
+    <div id="mode-selection">
+        <h2>Mod Seçimi</h2>
+        <label for="zorluk">Zorluk Seviyesi</label>
+        <select id="zorluk" onchange="zorlukSeviyesiniAyarla(this.value)">
+
+            <option value="kolay">Kolay</option>
+            <option value="orta" >Orta</option>
+            <option value="zor">Zor</option>
+
+        </select>
+    </div>
+    <button onclick="baslatOyun()">Oyuna Başla</button> -->
+
 
     <script src="./snake.js"></script>
 </body>
+
 </html>
