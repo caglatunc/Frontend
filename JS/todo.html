@@ -29,16 +29,53 @@
         1) Fetch =>
         2) Axios =>
         3) JQuery Ajax => 
-        
+
      -->
 
     <script>
-        const todos =[];
+        let todos =[];
 
         let isUpdateFormActive = true;
         let index = 0; // index isimli değişken güncelleme yaparken hangi listede güncelleme işlemine başladıysam onun indexini tutacakki güncelleme yapabiliyim.
 
         showTrueForm();
+
+        //Api İsteği Yapma get ile 
+
+        function  getTodoListFromApi(){
+            fetch("https://jsonplaceholder.typicode.com/todos")
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data)
+                    todos =data;
+                    setULList()
+                });   
+        }
+
+        // Api tarafında silme işlemi yap
+
+        function deleteTodoFromApi(id){ //Sileceğimiz kaydın id numarası lazım, indexi değil.
+            fetch("https://jsonplaceholder.typicode.com/"+id,{
+                method:"DELETE",
+            }) 
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                getTodoListFromApi();
+            })
+        } 
+
+        getTodoListFromApi();
+        
+
+        // İkinci kullanış şekli 
+
+        // function  getTodoListFromApi(){
+        //     fetch("")
+        //         .then((res) => {
+        //             console.log(res);
+        //         });
+        // }
 
         function showTrueForm(){
             isUpdateFormActive = !isUpdateFormActive; //true ise işlem sonunda false yapar ya da tam tersi
@@ -86,10 +123,10 @@
         let text = ""; // tex sıfırla.
          for(let i in todos){
             const value= todos[i];//todos indexindeki kaydı set ettik.
-            text += `<li>${value}</li> 
+            text += `<li>${value.title}</li> 
             <div class="operations">
             <button onclick="get(${i})">Update </button>
-            <button onclick="deleteTodo(${i})">Delete</button> </div>`//liste olusturucak
+            <button onclick="deleteTodoFromApi(${value.id})">Delete</button> </div>`//liste olusturucak
             
          }
          
@@ -102,7 +139,7 @@
         function get(i){
             
             showTrueForm();
-            updateWorkEl.value = todos[i]; // Güncelleme formumun inputuna güncellemek istediğim değeri aldım
+            updateWorkEl.value = todos[i].title; // Güncelleme formumun inputuna güncellemek istediğim değeri aldım
             index = i; 
            
         }
