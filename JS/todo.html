@@ -10,9 +10,14 @@
     </style> -->
 </head>
 <body>
-    <div>
+    <div id="addForm">
         <input id="work" type="text" placeholder="Some work...">
         <button onclick="save()">Save</button>
+    </div>
+    <div id="updateForm">
+        <input id="updateWork" type="text" placeholder="Some work...">
+        <button onclick="update()">Update</button>
+        <button>Cancel</button>
     </div>
     <hr>
     <ul id="todo-list">
@@ -20,6 +25,25 @@
 
     <script>
         const todos =[];
+        let isUpdateFormActive = true;
+        let index = 0; // index isimli değişken güncelleme yaparken hangi listede güncelleme işlemine başladıysam onun indexini tutacakki güncelleme yapabiliyim.
+
+        showTrueForm();
+
+        function showTrueForm(){
+            isUpdateFormActive = !isUpdateFormActive; //true ise işelm sonunda false yapar ya da tam tersi
+
+            const addFormEl = document.getElementById("addForm");
+            const updateFormEl = document.getElementById("updateForm");
+
+            if(isUpdateFormActive){
+                addFormEl.style.display ="none";
+                updateFormEl.style.display = "block"; // block ile görünür.
+            }else{
+                addFormEl.style.display =" block";
+                updateFormEl.style.display = "none";
+            }
+        }
 
         function save(){
          const inputElement = document.getElementById("work");   //inputtaki değere ulaşacağız
@@ -42,11 +66,30 @@
         let text = ""; // tex sıfırla.
          for(let i in todos){
             const value= todos[i];//todos indexindeki kaydı set ettik.
-            text += `<li>${value}</li> <button onclick="deleteTodo(${i})">Delete</button>` //liste olusturucak
+            text += `<li>${value}</li> 
+            <button onclick="get(${i})">Update </button>
+            <button onclick="deleteTodo(${i})">Delete</button>` //liste olusturucak
+            
          }
          
          const ulElement = document.getElementById("todo-list")
          ulElement.innerHTML = text; // inner.html ile basınca li'yi elemente çevirir.
+        }
+
+        const updateWorkEl =document.querySelector("#updateWork");
+
+        function get(i){
+            
+            showTrueForm();
+            updateWorkEl.value = todos[i]; // Güncelleme formumun inputuna güncellemek istediğim değeri aldım
+            index = i; 
+           
+        }
+
+        function update(){
+            todos[index] = updateWorkEl.value;
+            showTrueForm();
+            setULList();
         }
     </script>
 </body>
