@@ -12,6 +12,10 @@ const todos =[];
 let id = 0;
 
 
+app.get("/", (req,res) => {
+    res.json("Ercan was here.")
+})
+
 
 app.get("/api/hello",(req,res)=>{
     res.json({message:"Api call is successful"})
