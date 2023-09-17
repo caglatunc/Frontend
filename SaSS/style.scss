@@ -1,0 +1,36 @@
+:root{ // CSS'de değişken oluşturma şekli 
+    --font-size: 18px
+}
+
+$fontSize: 18 px; //scss
+
+ul li, ul li a{
+    // font-size: var(--font-size); CSS'deki değişken oluşturma yöntemi
+    font-size:$fontSize; // scss yöntemi
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+ul li{
+    list-style: none;
+}
+@mixin font-size{
+    font-size: 150px;
+    color: red;
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    @include font-size;
+    li{
+        list-style: none;
+        @include font-size;
+        a{
+            @include font-size;
+        }
+    }
+    
+}
