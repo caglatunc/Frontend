@@ -1,0 +1,17 @@
+nav {
+  color: aqua;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li {
+  display: block;
+}
+nav ul li .link {
+  display: block;
+}/*# sourceMappingURL=nesting.css.map */

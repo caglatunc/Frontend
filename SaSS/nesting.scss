@@ -1,0 +1,26 @@
+//@import 'style';  style.scss dosyasındaki herşey nesting.css dosyasına gelir.
+
+
+nav {
+    color: aqua;
+    font: {
+        family: Helvetica, sans-serif;
+        size: 18px;
+        weight:bold;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            display: block;
+
+            .link{
+                display: block;
+            }
+        }
+    }
+}
+
