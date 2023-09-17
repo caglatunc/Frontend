@@ -25,12 +25,27 @@ ul li{
 ul{
     list-style: none;
     @include font-size;
+    :first-child{
+        color: green;
+    }
     li{
         list-style: none;
+        width: 100%;
         @include font-size;
         a{
+            text-decoration: none;
             @include font-size;
+        }
+        }
+    }
+    div{
+        > span {
+            color: red;
+        }
+    
+        span{
+            display: block;
+            color: green;
         }
     }
     
-}

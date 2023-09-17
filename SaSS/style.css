@@ -20,14 +20,27 @@ ul {
   color: red;
   width: 100%;
 }
+ul :first-child {
+  color: green;
+}
 ul li {
   list-style: none;
+  width: 100%;
   font-size: 150px;
   color: red;
   width: 100%;
 }
 ul li a {
+  text-decoration: none;
   font-size: 150px;
   color: red;
   width: 100%;
+}
+
+div > span {
+  color: red;
+}
+div span {
+  display: block;
+  color: green;
 }/*# sourceMappingURL=style.css.map */
