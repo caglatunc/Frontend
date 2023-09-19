@@ -193,6 +193,9 @@ body{
 }
 .about{
     margin-bottom: 50px;
+    padding-bottom: 20px; /* Add padding to separate sections */
+    border-bottom: 1px solid #ccc; /* Add a border to separate sections */
+
 }
 
 .about:last-child{

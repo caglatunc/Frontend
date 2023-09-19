@@ -16,11 +16,11 @@
         <div class="left_Side">
             <div class="profileText">
                 <div class="imgBx">
-                    <img src="img.jpg">
+                    <img src="img.jpg" id="avatar">
                 </div>
                 <div class="name-title">
-                    <h2>Çağla Tunç Savaş</h2>
-                    <span>Software Developer</span>
+                    <h2 id="name">Çağla Tunç Savaş</h2>
+                    <span id="title">Software Developer</span>
                 </div>
             </div>
             <div class="contactInfo">
@@ -29,58 +29,38 @@
                     <li>
                         <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
                         </span>
-                        <span class="text">+90 500 000 00 00</span>
+                        <span class="text" id="phone">+90 500 000 00 00</span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </span>
-                        <span class="text">cagla@gmail.com</span>
+                        <span class="text" id="email">cagla@gmail.com</span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i>
                         </span>
-                        <span class="text">www.mywebsite.com</span>
+                        <span class="text" id="website">www.mywebsite.com</span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span> <span
-                            class="text">www.linkedin.com/me</span>
+                            class="text" id="socialMedia">www.linkedin.com/me</span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                         </span>
-                        <span class="text">İstanbul, Turkey</span>
+                        <span class="text" id="address">İstanbul, Turkey</span>
                     </li>
                 </ul>
             </div>
             <div class="contactInfo skills">
                 <h3 class="title">professional Skills</h3>
-                <ul>
-                    <li>
-                        <span class="text">HTML</span>
-                        <span class="percent">
-                            <div style="width: 90%;"></div>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="text">CSS</span>
-                        <span class="percent">
-                            <div style="width: 90%;"></div>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="text">JS</span>
-                        <span class="percent">
-                            <div style="width: 90%;"></div>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="text">SaSS</span>
-                        <span class="percent">
-                            <div style="width: 90%;"></div>
-                        </span>
-                    </li>
+                <ul id="skills">
+                    <!-- <button onclick="addSkill()">+</button> -->
+                   
                 </ul>
-            </div>
+            </div> 
+
+            <!-- LANGUAGES -->
 
             <div class="contactInfo language">
                 <h3 class="title">Languages</h3>
@@ -103,10 +83,10 @@
         <div class="right_Side">
             <div class="about">
                 <h2 class="title2">About Me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit magnam nisi dolores repellendus
+                <div id="aboutMe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit magnam nisi dolores repellendus
                     corporis distinctio cupiditate, saepe eius,<br><br>Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Dolores vero laboriosam perferendis aliquam accusamus voluptates a voluptatibus
-                    eos, veritatis nesciunt expedita asperiores at </p>
+                    eos, veritatis nesciunt expedita asperiores at </div>
             </div>
             <div class="about">
                 <h2 class="title2">Experience</h2>
@@ -179,6 +159,8 @@
                </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
