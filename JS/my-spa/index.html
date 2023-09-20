@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
+    <style>
+        a{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>logo</h1>
+        <ul>
+            <li>
+                <a onclick="getPage('home')">
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a onclick="getPage('blog')">
+                    Blog
+                </a>
+            </li>
+            <li>
+                <a onclick="getPage('contact')">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+<script>
+    let blog;
+    async function getBlogPage() {
+        if(blog === undefined){
+            const result = await axios.get("./blog.html");
+            console.log(result);
+            blog = result.data;
+        }
+
+        document.getElementById("root").innerHTML=blog;
+    }
+
+    let home;
+    async function getHomePage() {
+        if(home === undefined){
+            const result = await axios.get("./home.html")
+            home=result.data;
+        }
+        
+         document.getElementById("root").innerHTML = home;
+    }
+
+    let contact;
+    async function getContactPage() {
+        if(contact === undefined){
+            const result = await axios.get("./contact.html")
+            console.log(result);
+            contact=result.data;
+         }
+    document.getElementById("root").innerHTML = contact;
+    }
+
+const pages = {
+    home:"",
+    blog:"",
+    
+}
+
+    async function getPage(pagename){
+        const result = await axios.get("./" + pagaName + ".html");
+        document.getElementById("root").innerHTML =result.data;
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+    <div id="root">
+       
+    </div>
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolorum dolore perferendis veniam soluta
+            voluptate est aliquam molestias cum? Quibusdam eaque ducimus necessitatibus sit corporis esse rerum debitis
+            ea numquam?</p>
+    </footer>
+</body>
+
+</html>

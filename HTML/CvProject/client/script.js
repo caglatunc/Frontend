@@ -28,7 +28,7 @@ function getMySkills(){
             <li>
             <span class="percent">
             <p>${skills.title}</p>
-                <div style="width:${skill.percent}%; background-color:black "></div>
+                <div style="width:${skill.percent}%; background-color:rgb(164, 179, 187) "></div>
             </span>
         </li>`
         }

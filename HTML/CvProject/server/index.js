@@ -7,11 +7,11 @@ app.use(express.json());
 
 
 const person = {
-    name:"Ercan Savaş",
+    name:"Çağla Tunç Savaş",
     title:"Software Developer",
     phone:"+90 500 000 00 00",
-    email:"ercan@gmail.com",
-    website:"www.ercan.com",
+    email:"cagla@gmail.com",
+    website:"www.cagla.com",
     socialMedia: "www.linkedin.com/me",
     address:"İstanbul / Turkey",
     avatar:"img.jpg",
