@@ -50,7 +50,7 @@ app.get("/api/getMyInformation", (req,res)=> {
     res.json(person);
 })
 
-
+//Yeteneklerimi karşı tarafa gönderebiliyorum.
 app.get("/api/getMySkills", (req,res)=> {
     res.json(skills);
 })

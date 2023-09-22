@@ -143,7 +143,7 @@ body{
 }
 
 .contactInfo.skills ul li .text {
-    color: #fff;
+    color: #fff ;
     font-weight: 300;
 }
 
@@ -163,6 +163,7 @@ body{
     height: 100%;
     background: rgb(164, 179, 187);
 }
+
 
 /* Style for the Languages section */
 

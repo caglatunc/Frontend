@@ -18,6 +18,8 @@ function getMyInformation(){
 
 getMySkills();
 }
+
+//skilleri function ile yakalıyor.
 function getMySkills(){
     axios.get("http://localhost:5000/api/getMySkills")
     .then(res=> {
@@ -26,11 +28,12 @@ function getMySkills(){
         for(let skill of skills){
             text += `
             <li>
-            <span class="percent">
-            <p>${skills.title}</p>
-                <div style="width:${skill.percent}%; background-color:rgb(164, 179, 187) "></div>
-            </span>
-        </li>`
+                <span class="percent">
+                <p>${skill.title} </p>
+                    <div style="width: ${skill.percent}%; background-color:rgb(164, 179, 187)"></div>
+                </span>
+            </li>
+            `
         }
         document.getElementById("skills").innerHTML= text;
     })
