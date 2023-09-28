@@ -228,13 +228,20 @@ p{
     text-transform: uppercase;
     color:  #848c90;
     font-weight: 600;
+    
 }
 
 .about .box .text h4{
     text-transform: uppercase;
     color: #2e2e50;
     font-size: 16px;
+    
+   
 }
+
+
+
+
 
 /* Add this CSS for the Education section */
 /* Style for the Education section */

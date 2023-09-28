@@ -1,9 +1,18 @@
-getMyInformation();
+get();
 
-function getMyInformation(){
-    axios.get("http://localhost:5000/api/getMyInformation")
-    .then(res=>{
-        const person = res.data;
+function get(){
+    axios.get("http://localhost:5000/api/get")
+    .then(res=> {
+        const myData = res.data;
+        setMyInformation(myData.person);
+        setMySkills(myData.skills);
+        setMyLanguages(myData.languages);
+        setMyExperiences(myData.experiences);
+        setEducations(myData.educations);
+    })
+}
+
+function setMyInformation(person){
         document.getElementById("name").innerText=person.name;
         document.getElementById("title").innerText=person.title;
         document.getElementById("avatar").src=person.avatar;
@@ -14,31 +23,82 @@ function getMyInformation(){
         document.getElementById("address").innerText=person.address;
         document.getElementById("aboutMe").innerHTML=person.aboutMe;
         console.log(person);
-    });
-
-getMySkills();
-}
+    }
 
 //skilleri function ile yakalıyor.
-function getMySkills(){
-    axios.get("http://localhost:5000/api/getMySkills")
-    .then(res=> {
-        const skills = res.data;
+function setMySkills(skills ){
         let text = "";
         for(let skill of skills){
             text += `
             <li>
                 <span class="percent">
                 <p>${skill.title} </p>
-                    <div style="width: ${skill.percent}%; background-color:rgb(164, 179, 187)"></div>
+                <div style="width: ${skill.percent}%; background-color:rgb(164, 179, 187)"></div>
                 </span>
             </li>
             `
         }
         document.getElementById("skills").innerHTML= text;
-    })
+    }
     
+function setMyLanguages(languages){
+    let text = "";
+    for(let language of languages){
+        text += `
+        <li>
+            <span class="text">
+            ${language.title}</span>
+            <span class="percent"><div style="width:${language.percent}%; background-color:rgb(164, 179, 187)"></div>
+            </span>
+        </li>
+        `
+    }
+    document.getElementById("languages").innerHTML= text;
+
+
 }
+
+ function setMyExperiences(experiences){
+    let text = `<h2 class="title2" >Experience</h2>`;
+     for(let experience of experiences){
+          text +=
+         `
+         <div class="box">
+         <div class="year_company">
+             <h5>${experience.date}</h5>
+             <h5>${experience.subtitle}</h5>
+        </div>
+         <div class="text">
+              <h4>${experience.title}</h4>
+            <P> ${experience.description}</P>
+         </div>
+         </div>`
+     }
+      document.getElementById("experiences").innerHTML=text;
+ }
+
+ function setEducations(educations){
+   let text = `<h2 class="title2">Education</h2>`
+   for(let ed of educations){
+        text += `  
+        <li>
+            <div class="year_company">
+                <h5>${ed.date}</h5>
+                <h5>${ed.subtitle}</h5>
+            </div>
+            <div class="text">
+                <h4>${ed.title}</h4>
+                <P>${ed.description}</P>
+            </div>
+        </li>`
+   }
+        document.getElementById("educations").innerHTML=text;
+ }
+
+
+
+
+
 
 
 
@@ -61,3 +121,4 @@ function getMySkills(){
 // function removeSkill(id){ //Hangi elementi sileceksem onun id'sini ister.
 //     document.getElementById(id).remove();
 // }
+
