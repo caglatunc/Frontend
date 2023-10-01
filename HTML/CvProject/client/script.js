@@ -1,13 +1,16 @@
-get();
+//get();
+
 
 function get(){
 
-    document.getElementById("blog").style.display ="none";
-    document.getElementById("spinner").style.display = "flex";
+     document.getElementById("blog").style.display ="none";
+     document.getElementById("spinner").style.display = "flex";
+     document.getElementById("error").style.display = "none";
+
 
     setTimeout(()=> {
     axios.get("http://localhost:5000/api/get")
-    .then(res=> {
+    .then(res=> { //.then İşlem başarılıysa yapar 
         const myData = res.data;
         setMyInformation(myData.person);
         setMySkills(myData.skills);
@@ -17,20 +20,31 @@ function get(){
         setMyInterests(myData.interests);
 
 
-        document.getElementById("blog").style.display ="block";
+        document.getElementById("blog").style.display ="flex";
+       document.getElementById("spinner").style.display = "none";
+    })
+
+    .catch(err=> { 
+        console.log(err);
         document.getElementById("spinner").style.display = "none";
+        document.getElementById("error").style.display = "flex";
+
     })
     
-        },4000)
+        },1000)
 
  
-
-
-
-
-
    
 }
+
+
+function tryAgain(){
+    document.location.reload();
+}
+
+
+
+
 
 function setMyInformation(person){
         document.getElementById("name").innerText=person.name;
