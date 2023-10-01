@@ -12,15 +12,19 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div id="blog"  class="container" style="display: none;" >
+
         <div class="left_Side">
+
+         
             <div class="profileText">
-                <div class="imgBx">
-                    <img src="img.jpg" id="avatar">
+                <div class="imgBx"  >
+                    <img id="avatar">
                 </div>
                 <div class="name-title">
-                    <h2 id="name">Çağla Tunç Savaş</h2>
-                    <span id="title">Software Developer</span>
+                    <h2 id="name"></h2>
+                    <span id="title"></span>
                 </div>
             </div>
             <!-- Contact Info -->
@@ -30,26 +34,26 @@
                     <li>
                         <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
                         </span>
-                        <span class="text" id="phone">+90 500 000 00 00</span>
+                        <span class="text" id="phone"></span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </span>
-                        <span class="text" id="email">cagla@gmail.com</span>
+                        <span class="text" id="email"></span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i>
                         </span>
-                        <span class="text" id="website">www.mywebsite.com</span>
+                        <span class="text" id="website"></span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span> <span
-                            class="text" id="socialMedia">www.linkedin.com/me</span>
+                            class="text" id="socialMedia"></span>
                     </li>
                     <li>
                         <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                         </span>
-                        <span class="text" id="address">İstanbul, Turkey</span>
+                        <span class="text" id="address"></span>
                     </li>
                 </ul>
             </div>
@@ -86,13 +90,21 @@
 
 
 
-
+        
 
         <div class="right_Side">
+
+            <div class="print">
+                <a href="#"></a>
+                <i class="fa fa-print"></i>
+            </div>
+
+
             <div class="about">
                 <h2 class="title2">About Me</h2>
                 <div id="aboutMe"></div>
             </div>
+
             <div class="about" id="experiences">
                 
                  <!-- <div class="box">
@@ -126,10 +138,10 @@
                         <P>Lorem ipsum dolor sit amet consectetur adipisicino esse, suscipit distinctio ex, nisi
                             nam necessitatibus hic!</P>
                     </div> 
-                </div> 
-            </div>   -->
+                </div> -->
+            </div>   
             <div class="about education">
-                <ul id="educations">
+                <ul id="educations" >
                     <!-- <li>
                         <div class="year_company">
                             <h5>2019-Present</h5>
@@ -154,17 +166,29 @@
                 </ul>
             </div> 
                <div class="about interest">
-                <h2 class="title2">Interest</h2>
-                <ul>
-                    <li><i class="fa fa-cutlery" aria-hidden="true"></i>
+                <ul id="interests">
+                    <!-- <li><i class="fa fa-cutlery" aria-hidden="true"></i>
                         Cooking</li>
-                    <li><i class="fa fa-book" aria-hidden="true"></i>Reading</li>
+                    <li><i class="fa fa-book" aria-hidden="true"></i>Reading</li> -->
                 </ul>
                </div>
+
+               
         </div>
+
     </div>
+
+    <div class="d-flex" id="spinner">
+        <h1>Sayfa Yükleniyor...</h1>
+        <div class="spinner"></div>
+    </div>
+    
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
     <script src="./script.js"></script>
 </body>
 
+</div>
 </html>

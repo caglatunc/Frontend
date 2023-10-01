@@ -89,6 +89,17 @@ const educations = [
     }
 ]
 
+const interests = [
+    {
+        icon:"fa fa-cutlery",
+        title:"Cooking"
+    },
+    {
+        icon:"fa fa-book",
+        title:"Reading "
+    }
+]
+
 
 //kontrol amaçlı api isteği
 // app.get("", (req, res) => {
@@ -101,7 +112,8 @@ app.get("/api/get", (req, res) => {
         skills: skills,
         languages: languages,
         experiences: experiences,
-        educations: educations
+        educations: educations,
+        interests:interests
     }
     res.json(myInformation);
 })

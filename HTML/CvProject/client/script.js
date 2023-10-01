@@ -1,6 +1,11 @@
 get();
 
 function get(){
+
+    document.getElementById("blog").style.display ="none";
+    document.getElementById("spinner").style.display = "flex";
+
+    setTimeout(()=> {
     axios.get("http://localhost:5000/api/get")
     .then(res=> {
         const myData = res.data;
@@ -8,8 +13,23 @@ function get(){
         setMySkills(myData.skills);
         setMyLanguages(myData.languages);
         setMyExperiences(myData.experiences);
-        setEducations(myData.educations);
+        setMyEducations(myData.educations);
+        setMyInterests(myData.interests);
+
+
+        document.getElementById("blog").style.display ="block";
+        document.getElementById("spinner").style.display = "none";
     })
+    
+        },4000)
+
+ 
+
+
+
+
+
+   
 }
 
 function setMyInformation(person){
@@ -54,8 +74,6 @@ function setMyLanguages(languages){
         `
     }
     document.getElementById("languages").innerHTML= text;
-
-
 }
 
  function setMyExperiences(experiences){
@@ -77,7 +95,8 @@ function setMyLanguages(languages){
       document.getElementById("experiences").innerHTML=text;
  }
 
- function setEducations(educations){
+ 
+ function setMyEducations(educations){
    let text = `<h2 class="title2">Education</h2>`
    for(let ed of educations){
         text += `  
@@ -92,10 +111,21 @@ function setMyLanguages(languages){
             </div>
         </li>`
    }
-        document.getElementById("educations").innerHTML=text;
+        document.getElementById("educations").innerHTML = text;
  }
 
-
+ function setMyInterests(interests){
+    let text = `<h2 class="title2">Interest</h2>`
+    for(let interest of interests) {
+        text += `
+        <li>
+        <i class="${interest.icon}" > </i>
+        ${interest.title}
+        </li>
+        `
+    }
+    document.getElementById("interests").innerHTML=text;
+ }
 
 
 
